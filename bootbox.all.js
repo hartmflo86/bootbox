@@ -1278,7 +1278,7 @@
       options.backdrop = typeof options.backdrop === 'string' && options.backdrop.toLowerCase() === 'static' ? 'static' : true;
     } 
 
-    if (!options.focus) {
+    if ( typeof options.focus === "undefined" ) {
       options.focus = true;
     }
 
