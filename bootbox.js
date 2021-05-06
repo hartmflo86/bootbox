@@ -501,7 +501,8 @@
     dialog.modal({
       backdrop: options.backdrop,
       keyboard: false,
-      show: false
+      show: false,
+      focus: options.focus
     });
 
     if (options.show) {
@@ -1076,6 +1077,10 @@
     } else {
       options.backdrop = typeof options.backdrop === 'string' && options.backdrop.toLowerCase() === 'static' ? 'static' : true;
     } 
+
+    if (!options.focus) {
+      options.focus = true;
+    }
 
     // no buttons is still a valid dialog but it's cleaner to always have
     // a buttons object to iterate over, even if it's empty
